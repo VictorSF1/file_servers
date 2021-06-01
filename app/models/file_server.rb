@@ -24,9 +24,9 @@ class FileServer < ActiveRecord::Base
   validates_length_of :password, :maximum => 40
   validates_inclusion_of :protocol, :in => PROTOCOLS.keys
 
-  attr_accessible :name, :protocol, :address, :port, :root, :login, :password,
-                  :autoscan, :is_public, :project_ids, :ftp_active, :sudo_login,
-                  :sudo_password, :if => lambda {|project, user| user.admin? }
+  #attr_accessible :name, :protocol, :address, :port, :root, :login, :password,
+  #                :autoscan, :is_public, :project_ids, :ftp_active, :sudo_login,
+  #                :sudo_password, :if => lambda {|project, user| user.admin? }
 
   require 'net/ftp'
   require 'stringio'
