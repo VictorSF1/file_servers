@@ -7,7 +7,7 @@ module FileServers
 
         base.class_eval do
           unloadable # Send unloadable so it will not be unloaded in development
-          before_filter :show_auto_scan_files, :only => :show
+          before_action :show_auto_scan_files, :only => :show
         end
       end
 
