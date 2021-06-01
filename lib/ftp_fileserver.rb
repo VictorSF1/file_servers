@@ -9,7 +9,7 @@ require 'file_servers/patches/attachments_helper_patch'
 require 'file_servers/patches/issues_controller_patch'
 require 'file_servers/patches/attachments_controller_patch'
 
-ActionDispatch::Callbacks.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   require_dependency 'file_servers/hooks/issue_file_server_hook_listener'
 end
 
