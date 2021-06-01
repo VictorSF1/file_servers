@@ -7,7 +7,7 @@ module FileServers
 
         base.class_eval do
           unloadable # Send unloadable so it will not be unloaded in development
-          before_filter :find_object_scan_path, :only => :scan_files
+          before_action :find_object_scan_path, :only => :scan_files
 
           alias_method_chain :file_readable, :ftp
         end
