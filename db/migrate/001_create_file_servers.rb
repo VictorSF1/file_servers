@@ -1,7 +1,7 @@
-class CreateFileServers < ActiveRecord::Migration
+class CreateFileServers < ActiveRecord::Migration[4.2]
   def change
   
-	  add_column :projects, :file_server_id, :integer
+    add_column :projects, :file_server_id, :integer
     add_column :attachments, :file_server_id, :integer
 	
     create_table :file_servers do |t|
