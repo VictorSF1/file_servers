@@ -17,7 +17,7 @@ class FileServersController < ApplicationController
 
   def create
     attrs = file_server_params
-    # attrs = params[:file_server]
+   #attrs = params[:file_server]
     attrs[:password] = FileServer::crypt_password(attrs[:password])
     @file_server = FileServer.new(attrs)
     if @file_server.save
